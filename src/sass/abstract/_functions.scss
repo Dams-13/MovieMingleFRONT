@@ -1,0 +1,6 @@
+$base-size: 16;
+
+// e.g  font-size: size(14);
+@function size($target, $context: $base-size) {
+  @return calc($target / $context) * 1rem;
+}

@@ -1,0 +1,79 @@
+%btn{
+    background-image: linear-gradient(to right,
+        $color-tertiary 0%,
+        $color-gradient-primary 50%,
+        $color-gradient-secondary 100%
+    );
+    background-size: 500%;
+    border: none;
+    border-radius: $radius-button;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    color: $color-grayscale-white;
+    font-family: $font-family-alt;
+    font-size: $font-s;
+    font-weight: 600;
+    outline: none;
+    position: relative;
+    padding: size(20.8) size(24) size(17.6);
+    text-transform: uppercase;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.07rem;
+
+    &:hover{
+        animation-name: gradientMove;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    @include breakpoint('phone-large', max){
+        width: 100%;
+      }
+    @include breakpoint('tablet'){
+      width: fit-content;
+    }
+    &-outline{
+        color: $color-tertiary;
+        //box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0)),
+            linear-gradient(101deg,
+                $color-tertiary,
+                $color-gradient-primary,
+                $color-gradient-secondary
+        );
+        background-size: auto;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        border: solid 3px transparent;
+        padding: calc(size(20.8) - 3px) size(24) calc(size(17.6) - 3px);
+        box-shadow: 2px 1000px 1px #fff inset;
+        transition: box-shadow 0.2s ease-in;
+
+        &:hover{
+            background-size: 500%;
+            box-shadow: none;
+            color: white;
+        }
+    }
+}
+
+.btn{
+    @extend %btn;
+
+    &--outline {
+        @extend %btn-outline;
+     }
+    // &-primary {
+    //   @extend %btn-primary;
+    // }
+    // &-secondary {
+    //   @extend %btn-secondary;
+    // }
+
+    // &-disabled {
+    //   @extend %btn-disabled;
+    // }
+}

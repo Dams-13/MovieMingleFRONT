@@ -1,0 +1,11 @@
+input{
+    box-shadow: 0.25rem 0.25rem 1.25rem rgba(66,95,255,.2);
+    border-radius: $radius;
+    border: none;
+    padding: $spacing-xs $spacing-s;
+    outline: none;
+    width: 100%;
+}
+.form-check-label{
+    cursor: pointer;
+}

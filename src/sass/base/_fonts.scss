@@ -1,0 +1,32 @@
+@font-face{
+    font-family: 'Poppins';
+    src: url('#{$path-font}Poppins-SemiBold.woff') format('woff'),
+         url('#{$path-font}Poppins-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url('#{$path-font}Poppins-Bold.woff') format('woff'),
+         url('#{$path-font}Poppins-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face{
+     font-family: 'Josefin Sans';
+     src: url('#{$path-font}JosefinSans-Bold.woff2') format('woff2'),
+         url('#{$path-font}JosefinSans-Bold.woff') format('woff');
+     font-weight: bold;
+     font-style: normal;
+     font-display: swap;
+}
+@font-face{
+     font-family: 'Josefin Sans';
+     src: url('#{$path-font}JosefinSans-Regular.woff2') format('woff2'),
+         url('#{$path-font}JosefinSans-Regular.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+     font-display: swap;
+}

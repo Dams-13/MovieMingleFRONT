@@ -1,0 +1,34 @@
+/**
+ * Forms template skeleton
+ */
+.form-template{
+    h1{
+        text-align: center;
+    }
+    .form{
+        margin: 0 auto;
+        max-width: 520px;
+    }
+}
+.form{
+    &__field{
+        display: flex;
+        align-items: center;
+        gap: $spacing-m;
+        margin-bottom: $spacing-m;
+    }
+    &__action{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-m;
+        margin-top: $spacing-xxl;
+    }
+    &-label{
+        flex: 1 0 auto;
+        width: 120px;
+    }
+    &-control{
+        flex: 1 1 auto;
+    }
+}

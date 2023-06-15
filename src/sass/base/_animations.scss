@@ -1,0 +1,73 @@
+@keyframes spinner-anim{
+  from{
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+@keyframes heart-filling{
+  from{
+      transform: scale(0.5);
+  }
+  50%{
+      transform: scale(1.2);
+  }
+  to{
+      transform: scale(1);
+  }
+}
+@keyframes thumb-up{
+  from{
+      transform: rotate(-10deg);
+  }
+  50%{
+      transform: rotate(-30deg);
+  }
+  to{
+      transform: rotate(0);
+  }
+}
+@keyframes thumb-down{
+  from{
+      transform: rotate(10deg);
+  }
+  50%{
+      transform: rotate(30deg);
+  }
+  to{
+      transform: rotate(0);
+  }
+}
+@keyframes progress{
+  0%{
+    stroke-dasharray: 0 100;
+  }
+}
+@keyframes animateGlow{
+  0%{
+    background-position: 0% 50%;
+  }
+  100%{
+    background-position: 200% 50%;
+  }
+}
+@keyframes gradientMove{
+  0%{
+    background-position: 0% 50%;
+  }
+  100%{
+    background-position: 100%;
+  }
+}
+@keyframes scanner-loop{
+  0%{
+    top: 0;
+  }
+  50%{
+    top: 100%;
+  }
+  100%{
+    top: 0;
+  }
+}

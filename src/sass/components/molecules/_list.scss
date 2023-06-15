@@ -1,0 +1,19 @@
+/**
+ *
+ */
+.watch-list{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(184px,1fr));
+    grid-gap: 30px;
+    margin-top: 40px;
+
+    &__item{
+        padding: 10px 0;
+        position: relative;
+        height: 304px;
+    }
+    &:has(.message){
+        grid-template-columns: auto;
+    }
+}

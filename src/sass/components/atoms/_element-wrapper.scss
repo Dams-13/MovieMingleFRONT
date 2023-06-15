@@ -1,0 +1,14 @@
+%element-wrapper,
+.element-wrapper{
+  max-width: 1400px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-inline: $spacing-m;
+
+  // @include breakpoint('desktop-large', max){
+  //   padding-inline: $spacing-m;
+  // }
+  @include breakpoint-between('phone', 'desktop-large'){
+    padding-inline: $spacing-s;
+  }
+}

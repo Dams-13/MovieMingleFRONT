@@ -1,0 +1,138 @@
+/**
+ *
+ */
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)){
+    .dark-content .product-header__blur{
+        background-color: rgba(40,40,40,.5);
+        backdrop-filter: saturate(190%) blur(60px);
+    }
+}
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)){
+    .light-content .product-header__blur {
+        background-color: rgba(246,246,246,.28);
+        backdrop-filter: saturate(190%) blur(60px);
+    }
+}
+
+.product{
+    &-header{
+        position: relative;
+        margin-top: -55vh;
+        z-index: $z-index-header;
+
+        @include breakpoint('phone-large', max){
+            margin-top: -70vh;
+        }
+    }
+    &-header__blur{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 55vh;
+        mask-image: linear-gradient(to bottom,transparent,rgba(0,0,0,.068) 3.3%,rgba(0,0,0,.145) 5.9%,rgba(0,0,0,.227) 8.1%,rgba(0,0,0,.313) 10.1%,rgba(0,0,0,.401) 12.1%,rgba(0,0,0,.49) 14.6%,rgba(0,0,0,.578) 17.7%,rgba(0,0,0,.661) 21.8%,rgba(0,0,0,.74) 27.1%,rgba(0,0,0,.812) 33.9%,rgba(0,0,0,.875) 42.4%,rgba(0,0,0,.927) 53%,rgba(0,0,0,.966) 66%,rgba(0,0,0,.991) 81.5%,rgba(0,0,0,.991) 100%);
+
+        @include breakpoint('phone-large', max){
+            height: 70vh;
+        }
+        &::after{
+            background-image: radial-gradient(circle farthest-corner,transparent 65%,$color-bg-dark), linear-gradient(0deg,$color-bg-dark,transparent 69%);
+            display: block;
+            position: absolute;
+            bottom: 0;
+            content: "";
+            width: 100%;
+            height: 100%;
+            z-index: 210;
+            pointer-events: none;
+        }
+    }
+    &__wrapper{
+        position: relative;
+    }
+    &__title{
+        display: inline-block;
+        background: transparent;
+        margin-bottom: 0;
+    }
+    &__heading{
+        margin-bottom: $spacing-l;
+    }
+    &__title,
+    &__heading,
+    &__text,
+    &__detail,
+    .comment-container{
+        font-family: 'Josefin Sans';
+        color: $color-grayscale-white;
+        -webkit-text-fill-color: $color-grayscale-white;
+        text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    }
+    &__interaction{
+        display: flex;
+        align-items: center;
+        gap: size(10);
+    }
+    &__text{
+        width: 94px;
+
+        + .product__vote{
+            margin-left: size(20);
+        }
+    }
+    &__vote{
+        display: flex;
+        align-items: center;
+        gap: size(10);
+
+        .badge{
+            display: inline-block;
+            position: relative;
+        }
+    }
+    &__overview{
+        margin-top: $spacing-l;
+        padding-top: $spacing-l;
+        border-top: 1px solid rgba(0,0,0,.1);
+        font-size: size(20);
+    }
+    &__action{
+        position: absolute;
+        top: 20px;
+        right: 0;
+        left: 0;
+        text-align: right;
+        z-index: $z-index-action;
+    }
+}
+.backdrop-container{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    min-width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: $z-index-neutral;
+}
+.backdrop-img {
+    max-width: 100%;
+    height: auto;
+    min-height: 100%;
+    align-self: stretch;
+    justify-self: stretch;
+    object-fit: cover;
+    object-position: center top;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,73 @@
+/**
+ * Chart with circular progress bar and number of votes
+ */
+ .chart{
+    cursor: default;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    &__circular{
+        display: block;
+        max-width: 100%;
+        max-height: 35px;
+    }
+    &__circle{
+        fill: none;
+        stroke-width: 3;
+        stroke-linecap: round;
+        animation: progress 1s ease-out forwards;
+    }
+    &__text{
+        color: $color-grayscale-dark;
+        font-family: 'Josefin Sans';
+        font-size: size(15);
+        font-weight: 600;
+        line-height: size(12);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &__percent{
+        font-size: size(9);
+        font-weight: 400;
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /*
+     * Size variations
+     */
+     &--large{
+        .chart__text{
+            font-size: size(24);
+            transform: translate(-46%, -25%);
+        }
+        .chart__percent{
+            font-size: size(14);
+            top: -6px;
+            position: relative;
+            transform: none;
+            left: auto;
+        }
+        .chart__circular{
+            max-height: 96%;
+        }
+    }
+
+    /*
+     * Color variations
+     */
+    &--dark{
+
+        .chart__text{
+            color: $color-grayscale-white;
+            opacity: .8;
+        }
+    }
+}

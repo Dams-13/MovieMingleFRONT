@@ -1,0 +1,33 @@
+/**
+ * Filters
+ */
+.filter{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $spacing-xxs;
+
+    &__checkbox{
+        @include visually-hidden();
+
+        &:checked + .filter__label{
+            background-color: $color-tertiary;
+            border-color: $color-tertiary;
+            color: $color-grayscale-white
+        }
+    }
+    &__label{
+        cursor: pointer;
+        padding: 4px $spacing-xxs;
+        border: 1px solid $color-grayscale-medium;
+        border-radius: size(14);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+
+        &:hover{
+            background-color: $color-grayscale-light;
+        }
+    }
+}

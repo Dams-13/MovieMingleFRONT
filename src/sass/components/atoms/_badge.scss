@@ -1,0 +1,74 @@
+@use "sass:color";
+
+/**
+ * Badges
+ */
+ .badge{
+    background-color: $color-grayscale-white;
+    border-radius: 50%;
+    box-shadow: 0 -3px 8px 0px rgb(0 0 0 / 8%);
+    cursor: pointer;
+    width: size(40);
+    height: size(40);
+    z-index: $z-index-badge;
+    transition: transform .5s;
+    @include icon();
+
+    &::before{
+        font-size: size(24);
+        color: $color-grayscale-light;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    /*
+     * Position variations
+     */
+    &--top-left{
+        position: absolute;
+        top: size(-10);
+        left: size(-10);
+    }
+    &--top-left2{
+        position: absolute;
+        top: size(-10);
+        left: size(40);
+        padding: 0;
+    }
+
+    /*
+     * Size variations
+     */
+    &--large{
+        width: size(60);
+        height: size(60);
+    }
+
+    /*
+     * Color variations
+     */
+    &--dark{
+        background-color: scale-color($color-grayscale-dark, $lightness: -40%);
+    }
+
+    /*
+     * Icons
+     */
+    &.icon-favorite,
+    &.icon-thumb-down{
+        font-size: 0;
+
+        &::before{
+            padding-top: 1px;
+        }
+    }
+    &.icon-thumb-down,
+    &.icon-thumb-up{
+        &::before{
+            color: scale-color($color-grayscale-light, $lightness: -10%);
+        }
+    }
+}

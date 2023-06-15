@@ -1,0 +1,87 @@
+@use "sass:color";
+
+/**
+ *
+ */
+.icon-favorite{
+    &::before{
+        content: "\e900";
+    }
+    &:hover{
+        &::before{
+            animation: heart-filling 0.4s ease-in-out;
+            color: $color-secondary;
+        }
+    }
+    &.active{
+        &::before{
+            color: $color-secondary;
+        }
+    }
+    &.loading{
+        pointer-events: none;
+
+        &::before{
+            content: none;
+        }
+    }
+    .load-spinner{
+        display: block;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: 7.5px;
+        left: 7.5px;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        border-right-color: rgba(0, 0, 0, 0.7);
+        animation: spinner-anim 0.8s linear infinite;
+
+        @include breakpoint('phone-large'){
+            width: 20px;
+            height: 20px;
+            top: 10px;
+            left: 10px;
+        }
+    }
+}
+.icon-thumb-up{
+    &::before{
+        content: "\e902";
+        transition: background 0.3s ease-in-out;
+    }
+    &:hover{
+        &::before{
+            animation: thumb-up 0.4s ease-in-out;
+        }
+    }
+    &:hover,
+    &.active{
+        &::before{
+            background: linear-gradient(-45deg, $color-gradient-secondary, $color-gradient-primary);
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+}
+.icon-thumb-down{
+    &::before{
+        content: "\e903";
+        transition: background 0.3s ease-in-out;
+    }
+    &:hover{
+        &::before{
+            animation: thumb-down 0.4s ease-in-out;
+        }
+    }
+    &:hover,
+    &.active{
+        &::before{
+            background: linear-gradient(-45deg, 
+                scale-color($color-secondary, $lightness: -60%),
+                scale-color($color-secondary, $lightness: -10%));
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+}

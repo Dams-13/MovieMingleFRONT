@@ -1,0 +1,57 @@
+/**
+ * Home template skeleton
+ */
+.home-template{
+    display: grid;
+    grid-template-areas: "aside main";
+    grid-template-columns: 240px 1fr;
+    gap: $spacing-xxl;
+    align-items: start;
+    justify-items: start;
+
+    &__aside{
+        grid-area: aside;
+        width: 100%;
+
+    }
+    &__filters{
+        box-shadow: 0.25rem 0.25rem 1.25rem rgba(66,95,255,.1);
+        border-radius: $radius;
+        padding: $spacing-s;
+    }
+    &__filters-init{
+        display: flex;
+        align-items: center;
+        gap: size(5);
+        margin-bottom: $spacing-s;
+        color: $color-grayscale-medium;
+        transition: color 0.3s ease-in-out;
+
+        .icon-arrow-sync{
+            font-size: $font-xs;
+            transition: all 0.3s ease-in-out;
+        }
+        &.active{
+            color: $color-tertiary;
+
+            .icon-arrow-sync{
+                color: $color-tertiary;
+            }
+            &:hover{
+                .icon-arrow-sync{
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    &__main{
+        grid-area: main;
+        width: 100%;
+    }
+}
+.aside{
+
+    &__title{
+        margin-top: 54px;
+    }
+}

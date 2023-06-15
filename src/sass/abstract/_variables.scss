@@ -1,0 +1,80 @@
+@use "sass:color";
+
+// DIRECTORIES
+$path-img: '../assets/img';
+$path-font: '../assets/fonts/';
+
+// FONTS
+$font-family: 'Poppins', sans-serif;
+$font-family-alt: 'Josefin Sans', serif;
+
+// COLORS
+$color-primary: #00213D;
+$color-primary-lighten: #002C57;
+$color-primary-darken: #00172a;
+$color-secondary: #FF3D42;
+$color-gradient-primary: #08f4ff;
+$color-gradient-secondary: #fd44bf;
+$color-tertiary: scale-color($color-gradient-primary, $lightness: -20%);
+$color-bg-dark: #060d17;
+$color-field-dark: #1f243a;
+$color-field-border-dark: #3a3f5c;
+$color-warning: #f34e80;
+$color-error: #f27474;
+
+// Grayscale
+$color-grayscale-white: #fff;
+$color-grayscale-smoke: #f5f5f5;
+$color-grayscale-light: #ededed;
+$color-grayscale-medium: #adadad;
+$color-grayscale-dark: #757575;
+$color-grayscale-black: #000;
+
+// FONT-SIZE
+$font-xl: size(80);
+$font-l: size(50);
+$font-m: size(40);
+$font-s: size(20);
+$font-xs: size(18);
+$font-s: size(16);
+
+// SPACING
+$spacing-xxl: size(48);
+$spacing-xl: size(40);
+$spacing-l: size(32);
+$spacing-m: size(24);
+$spacing-s: size(16);
+$spacing-xs: size(12);
+$spacing-xxs: size(8);
+
+// Z-INDEX
+$z-index-header: 200;
+$z-index-action: 100;
+$z-index-badge: 50;
+$z-index-neutral: 0;
+$z-index-glow: -1;
+
+// RADIUS
+$radius-button: size(80);
+$radius: size(8);
+
+// TRANSITIONS
+$transition-duration: 0.4s;
+$transition-duration-fast: 0.2s;
+$transition-duration-ultra-fast: 0.1s;
+
+// BREAKPOINTS
+
+// We use https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/ breakpoints logic
+// by default it uses min width : breakpoint('desktop') => media only screen and (min-width: 992px) {}
+// to use max : breakpoint('desktop', max) => @media only screen and (max-width: 991px) {}
+// to use min and max : breakpoint-between('tablet', 'desktop') corresponding to tablet only
+// for phone only you can use breakpoint('phone-large', max) or breakpoint-between('phone', 'phone-large')
+$breakpoints: (
+  "phone":          0,
+  "phone-large":    576px,
+  "tablet":         768px,
+  "desktop":        992px,
+  "desktop-large":  1200px,
+  "desktop-wide":   1400px
+);

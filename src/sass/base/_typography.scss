@@ -1,0 +1,93 @@
+@use "sass:color";
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5{
+    color: $color-primary;
+    font-family: $font-family-alt;
+    font-weight: 700;
+}
+h1,
+.h1{
+    font-size: $font-m;
+    line-height: $font-m;
+    margin: 0 0 $spacing-xxl;
+    background: linear-gradient(-45deg, $color-gradient-secondary, $color-gradient-primary);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include breakpoint('tablet'){
+        font-size: $font-xl;    // 80
+        line-height: size(80);
+    }
+}
+h2:not(.swal2-title),
+.h2{
+    font-size: size(28);
+    line-height: size(30);
+    margin-bottom: size(20);
+    background: linear-gradient(-45deg, $color-gradient-secondary, $color-gradient-primary);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include breakpoint('tablet'){
+        font-size: $font-l;     // 50
+        line-height: size(55);
+    }
+}
+h3,
+.h3{
+    font-size: size(22);
+    line-height: size(24);
+    margin-bottom: $spacing-s;
+    background: linear-gradient(-45deg, 
+        scale-color($color-gradient-secondary, $lightness: -25%),
+        scale-color($color-gradient-primary, $lightness: -25%));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include breakpoint('tablet'){
+        font-size: $font-m;     // 40
+        line-height: size(40);
+    }
+}
+h4,
+.h4{
+    font-size: $font-xs;
+    line-height: size(25);
+    margin-bottom: $spacing-s;
+
+    @include breakpoint('tablet'){
+        font-size: $font-s;     // 20
+    }
+}
+h5,
+.h5{
+    font-size: $font-xs;
+    line-height: size(22);
+    margin-bottom: $spacing-xs;
+
+    @include breakpoint('tablet'){
+        font-size: $font-xs;
+    }
+}
+
+/**
+ * Lists
+ */
+ul, ol{
+    list-style-position: inside;
+}
+ 
+/**
+ * Paragraphs
+ */
+p{
+    margin-bottom: $spacing-s;
+ 
+    @include breakpoint('desktop'){
+        margin-bottom: $spacing-m;
+    }
+}

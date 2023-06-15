@@ -1,0 +1,18 @@
+/**
+ * Sections
+ */
+.section{
+    padding-block: $spacing-xl $spacing-xxl;
+
+    /*
+     * Colors
+     */
+    &--gradient{
+        background: linear-gradient(45deg,$color-gradient-primary,$color-gradient-secondary);
+
+        h2{
+            margin-top: 0;
+            color: $color-grayscale-white;
+        }
+    }
+}

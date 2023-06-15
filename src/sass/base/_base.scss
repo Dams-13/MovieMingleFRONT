@@ -1,0 +1,54 @@
+/**
+ * Make all elements inherit from `html` box-sizing
+ */
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+.container,
+.container-fluid{
+  padding-right: size(20);
+  padding-left: size(20);
+
+  @include breakpoint('tablet') {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+/**
+  * 1. Redefine box-sizing on the root element
+  * 2. Explicitly set a background color to avoid an issue in Edge in dark mode,
+  *    where the browser’s chrome background is set to a dark color
+  */
+html{
+  box-sizing: border-box; /* 1 */
+  background-color: $color-grayscale-white; /* 2 */
+}
+
+/**
+ * Basic typography styles
+ */
+body{
+  color: $color-primary;
+  font-family: $font-family;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/**
+ * Basic styles for links
+ */
+a{
+  color: $color-primary;
+  text-decoration: none;
+}
+
+/**
+ * Basic styles for form fields
+ */
+input{
+  font-family: $font-family;
+}
+input[type="submit"]{
+  font-size: size(16);
+}

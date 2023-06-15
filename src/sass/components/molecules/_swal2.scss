@@ -1,0 +1,29 @@
+@use "sass:color";
+
+/**
+ * Sweet alert 2 customisation
+ */
+.swal2-actions{
+    gap: $spacing-m;
+}
+.swal2-title {
+    padding-top: 0;
+}
+.swal2-icon.swal2-info{
+    background: linear-gradient(-45deg, $color-gradient-secondary, $color-gradient-primary);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    border-color:  scale-color($color-gradient-primary, $lightness: -20%);
+    color: $color-grayscale-medium;
+}
+.swal2-icon.swal2-warning{
+    border-color:  $color-warning;
+    color: $color-warning;
+}
+.swal2-icon-warning .swal2-title{
+    color: $color-warning;
+}
+.swal2-icon-error .swal2-title{
+    color: $color-error;
+}

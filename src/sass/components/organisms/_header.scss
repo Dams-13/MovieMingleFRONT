@@ -1,0 +1,113 @@
+@use "sass:color";
+
+.header{
+    box-shadow: 0.25rem 0.25rem 1.25rem rgba(66,95,255, .1);
+    margin-bottom: $spacing-xxl;
+
+    .element-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: size(30);
+    }
+    &__logo{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: size(20);
+
+        svg{
+            width: 100px;
+        }
+    }
+    &__title{
+        font-family: $font-family-alt;
+        font-weight: 700;
+        font-size: $font-m;
+        background: linear-gradient(-45deg, $color-gradient-secondary, $color-gradient-primary);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: $color-grayscale-white;
+    }
+    &__navigation{
+        width: calc(100% - 410px);
+
+        ul{
+            display: flex;
+            align-items: center;
+            gap: size(24);
+
+            > li{
+                &:hover{
+                    span{
+                        background-size: 100% 0.18rem;
+                    }
+                }
+                @include quantity-query(2){
+                    &:nth-child(1){
+                        color: scale-color($color-gradient-secondary, $lightness: -25%);
+    
+                        span{
+                            background-image: linear-gradient($color-gradient-secondary, $color-gradient-secondary);
+                        }
+                    }
+                }
+                @include quantity-query(2, 'greater'){
+                    &:nth-child(1){
+                        color: scale-color($color-gradient-secondary, $lightness: -25%);
+                        span{
+                            background-image: linear-gradient(
+                                scale-color($color-gradient-secondary, $lightness: -25%),
+                                scale-color($color-gradient-secondary, $lightness: -25%)
+                            );
+                        }
+                    }
+                    &:nth-child(2){
+                        color: scale-color($color-gradient-secondary, $lightness: -40%);
+                        span{
+                            background-image: linear-gradient(
+                                scale-color($color-gradient-secondary, $lightness: -40%),
+                                scale-color($color-gradient-secondary, $lightness: -40%)
+                            );
+                        }
+                    }
+                    &:nth-child(3){
+                        color: scale-color($color-gradient-primary, $lightness: -40%);
+                        span{
+                            background-image: linear-gradient(
+                                scale-color($color-gradient-primary, $lightness: -40%),
+                                scale-color($color-gradient-primary, $lightness: -40%)
+                            );
+                        }
+                    }
+                    &:nth-child(4){
+                        color: scale-color($color-gradient-primary, $lightness: -20%);
+                        span{
+                            background-image: linear-gradient(
+                                scale-color($color-gradient-primary, $lightness: -20%),
+                                scale-color($color-gradient-primary, $lightness: -20%)
+                            );
+                        }
+                    }
+                }
+            }
+        }
+        span{
+            cursor: pointer;
+            display: inline-block;
+            background-size: 1.75rem 0.18rem;
+            background-position: 0 105%;
+            background-repeat: no-repeat;
+            line-height: 1.61;
+            transition: background-size .3s;
+        }
+    }
+    &__search{
+        margin-left: auto;
+
+        input::placeholder {
+            color: $color-grayscale-medium;
+        }
+    }
+}
